@@ -3,8 +3,13 @@
 <p><%= @restaurant.address %></p>
 <p><%= @restaurant.category %></p>
 <p><%= @restaurant.phone_number %></p>
-
-<%= link_to "Back to list", restaurants_path, class: "btn btn-primary"%>
+<p><h3>Reviews</h3>
+<% @restaurant.reviews.each do |review| %>
+  <li>Rating: <%= review.rating %> | <%= review.content %></li>
+<% end %>
+</p>
+<p><%= link_to "Write a review", "#{@restaurant.id}/reviews/new", class: "btn btn-primary"%></p>
+<p><%= link_to "Back to list", restaurants_path, class: "btn btn-primary"%></p>
 </div>
 
 

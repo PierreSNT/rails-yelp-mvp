@@ -3,4 +3,5 @@
 <% @restaurants.each do |restaurant| %>
   <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
 <% end %>
+<p><%= link_to "Create a restaurant", 'restaurants/new', class: "btn btn-primary"%></p>
 </div>
